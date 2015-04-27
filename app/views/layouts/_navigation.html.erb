@@ -61,10 +61,6 @@
   <% end %>
 </div>
 
-  <p class='pull-right navbar-text'>
-    Currently logged in as <%= current_user.username %>
-  </p>
-
   <% else %>
     <div class='nav_item'>
     <%= link_to 'Register', register_path, class: 'btn btn-success btn-small' %>

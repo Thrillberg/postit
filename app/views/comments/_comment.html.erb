@@ -2,9 +2,12 @@
 
 
 <div class='row'>
+<div id="comment_vote_error_<%= comment.to_param %>" class="alert alert-error" style="display: none">
+      You can only vote on a comment once.
+    </div>
   <div class='span0 well text-center'>
   <% if current_user %>
-    <%= link_to vote_post_comment_path(comment.post, comment, vote: true), method: 'post', remote: true do %>
+    <%= link_to vote_post_comment_path(comment.post, comment, vote: 'true'), method: 'post', remote: true do %>
       <i class='icon-arrow-up'></i>
     <% end %>
     <br/>
@@ -12,7 +15,7 @@
     <span id='comment_<%= comment.id %>_votes'><%= comment.total_votes %> votes</span>
     <br/>
     <% if current_user %>
-    <%= link_to vote_post_comment_path(comment.post, comment, vote: false), method: 'post', remote: true do %>
+    <%= link_to vote_post_comment_path(comment.post, comment, vote: 'false'), method: 'post', remote: true do %>
       <i class='icon-arrow-down'></i>
     <% end %>
     <% end %>
